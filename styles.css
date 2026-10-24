@@ -1,0 +1,264 @@
+/* ===== Reset & Base ===== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Skip link (visible only on keyboard focus) */
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: 0;
+  background: #fff;
+  color: #1a237e;
+  padding: 8px 14px;
+  z-index: 100;
+}
+.skip-link:focus {
+  left: 10px;
+}
+
+/* ===== Header & Navigation ===== */
+.site-header {
+  background-color: #1a237e;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 0;
+  flex-wrap: wrap;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+  text-decoration: none;
+}
+.logo span {
+  color: #ffb300;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  gap: 8px;
+}
+
+.nav-list a {
+  display: block;
+  padding: 8px 16px;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.nav-list a:hover,
+.nav-list a:focus {
+  background-color: #3949ab;
+}
+
+/* Highlight for the current page */
+.nav-list a.active {
+  background-color: #ffb300;
+  color: #1a237e;
+  font-weight: bold;
+}
+
+/* ===== Hero Section ===== */
+.hero {
+  min-height: 80vh;
+  background-color: #1a237e; /* fallback if the image does not load */
+  background-image: url("https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1600&q=70");
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-overlay {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  background-color: rgba(10, 20, 80, 0.7); /* dark overlay for text contrast */
+}
+
+.hero-content {
+  color: #fff;
+  text-align: center;
+  padding: 60px 0;
+}
+
+.hero-content h1 {
+  font-size: 48px;
+  line-height: 1.2;
+  margin-bottom: 18px;
+}
+
+.hero-content p {
+  font-size: 20px;
+  max-width: 650px;
+  margin: 0 auto 30px;
+}
+
+.btn {
+  display: inline-block;
+  background-color: #ffb300;
+  color: #1a237e;
+  font-weight: bold;
+  font-size: 18px;
+  text-decoration: none;
+  padding: 14px 34px;
+  border-radius: 30px;
+  transition: transform 0.3s, background-color 0.3s;
+}
+.btn:hover,
+.btn:focus {
+  background-color: #ffc947;
+  transform: translateY(-3px);
+}
+
+/* ===== General Sections ===== */
+.section {
+  padding: 70px 0;
+}
+
+.section-light {
+  background-color: #f3f5fb;
+}
+
+h2 {
+  font-size: 34px;
+  color: #1a237e;
+  margin-bottom: 18px;
+}
+
+.center {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+/* ===== About ===== */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.about-grid img {
+  border-radius: 10px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+}
+
+.about-grid p {
+  margin-bottom: 14px;
+}
+
+/* ===== Services (cards) ===== */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.card {
+  background-color: #fff;
+  padding: 30px 25px;
+  border-top: 5px solid #ffb300;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  transition: transform 0.3s;
+}
+.card:hover {
+  transform: translateY(-6px);
+}
+
+.card h3 {
+  color: #1a237e;
+  margin-bottom: 10px;
+}
+
+/* ===== Footer ===== */
+.site-footer {
+  background-color: #1a237e;
+  color: #fff;
+  padding-top: 45px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.footer-title {
+  font-size: 20px;
+  color: #ffb300;
+  margin-bottom: 12px;
+}
+
+.site-footer a {
+  color: #fff;
+}
+.site-footer a:hover {
+  color: #ffb300;
+}
+
+.social-list {
+  list-style: none;
+}
+.social-list li {
+  margin-bottom: 6px;
+}
+
+.copyright {
+  text-align: center;
+  margin-top: 35px;
+  padding: 16px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.25);
+  font-size: 14px;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .about-grid,
+  .cards,
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+  .header-inner {
+    justify-content: center;
+    gap: 10px;
+  }
+  .hero-content h1 {
+    font-size: 32px;
+  }
+}
